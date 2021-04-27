@@ -12,17 +12,17 @@
       <div class="container">
         <div class="row">
             <!-- v-for="item in info_cp" -->
-          <template  v-for="item in info_cp">
+          <template>
             <div class="col-md-8 col-md-offset-2">
               <input  type="text" class="form-control" v-model="searchCode" placeholder='Codigo...'>
                   <!-- v-if="countriesFilter && countriesFilter.length" -->
-                <div > 
+                <div  v-for="item in info_cp" v-bind:key="item.id"> 
                     <!--  v-for="country of countriesFilter" -->
-                  <div class="panel panel-default" >
+                  <!-- <div class="panel panel-default" >
                     <div class="panel-heading">
-                      <!-- <img v-bind:src="country.flag" alt="" width="30px"> -->
+                      <!-- <img v-bind:src="country.flag" alt="" width="30px"> 
                       <span>{{info_cp[0].response.cp}}</span>
-                      </div>
+                      </div> -->
                       <div class="panel-body">
                         <div class="row">
                           <div class="col-md-6">Estado: <strong>{{info_cp[0].response.ciudad}}</strong></div>
@@ -34,7 +34,7 @@
                         <div class="col-md-6">Colonia/Municipio: <strong >{{info_cp[0].response.municipio}}</strong></div>
                       </div> 
                     </div>
-                  </div>
+                  <!-- </div> -->
                 </div>
                 <!-- v-else -->
               <div class="text-center">
@@ -83,7 +83,11 @@ export default {
   },
   
   computed: {
-   
+    Postales(){
+      return info_cp.filter(item => {
+        return item.nombre.toLowerCase().includes(this.searchCode.toLowerCase());
+      })
+    }
   },
 
 
