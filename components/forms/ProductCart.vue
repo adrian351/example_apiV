@@ -33,7 +33,8 @@
 
 <script>
 import axios from 'axios';
-// import {apiUrl} from '~/repository/Repository';
+// import {baseURL} from '../../repository/Repository';
+
 export default {
   name:'ProductCart',
   data(){
@@ -41,13 +42,19 @@ export default {
       result: []
     }
   },
+
+  created() {
+    this.getProductos();
+  },
   
-  async created() {
+  methods:{
+    async getProductos() {
     //  llamada a la api
     const res = await axios.get('http://127.0.0.1:8000/api/productos')
-      // respuesta datos
+      // respuesta datos 
       this.result = res.data;
       console.log(res.data);
+      }
     
   }
 }

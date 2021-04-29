@@ -6,10 +6,8 @@
         <br/>
         <br/>
         <v-btn color="info"> <nuxt-link to="/">Home</nuxt-link></v-btn>
-    
     </div>
-
-    </div>
+  </div>
 </template>
 
 <style scoped>

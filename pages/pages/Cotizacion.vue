@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <Cotizar/>
-
+    
     </div>
   </div>
 </template>
