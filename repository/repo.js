@@ -1,4 +1,4 @@
-
+import Axios from 'axios';
 
 //llamada al endpoint de sepomex 
 const consultaSepomex = async(request) => {
@@ -14,11 +14,10 @@ const consultaSepomex = async(request) => {
         return JSON.parse(respuesta).name
         
     });
-    return result;
-    
+    return result,
+    console.log(result)
 }
 
-// console.log();
 
 
 function resultMunicipios(request) {
@@ -52,3 +51,4 @@ function resultColonias(request) {
     }
     return colonias;
 }
+

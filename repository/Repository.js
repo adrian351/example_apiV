@@ -1,7 +1,7 @@
-// import axios from 'axios'
-// import VueAxios from 'vue-axios'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
  
-// Vue.use(VueAxios, axios)
+Vue.use(VueAxios, axios)
 
 // // Agregamos la URL base de nuestra API
 // axios.defaults.baseURL = 'http://127.0.0.1:8000/api';
